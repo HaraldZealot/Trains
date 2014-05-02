@@ -23,6 +23,9 @@ void sigWinch(int signo);
 
 void initialiseProgram();
 
+int currentCirclePosition(int position, int circleLength);
+int nextCirclePosition(int position, int circleLength);
+
 int main()
 {
 	initialiseProgram();
@@ -51,18 +54,29 @@ int main()
 	
 	while(1)
 	{
-		move(railPosition, trainHead + 2);
+		move(railPosition, nextCirclePosition(trainHead, railLength) + 1);
 		printw("%s",block);
-		move(railPosition, trainTail + 1);
+		move(railPosition, currentCirclePosition(trainTail, railLength) + 1);
 		printw("%s",thinLine);
 		refresh();
-		trainHead = (trainHead + 1) % railLength;
-		trainTail = (trainTail + 1) % railLength;
+		usleep(40000);
+		trainHead = nextCirclePosition(trainHead, railLength);
+		trainTail = nextCirclePosition(trainTail, railLength);
 	}
 	
 
 	endwin();
 	return 0;
+}
+
+int currentCirclePosition(int position, int circleLength)
+{
+	return position;
+}
+
+int nextCirclePosition(int position, int circleLength)
+{
+	return (position + 1) % circleLength;
 }
 
 void initialiseProgram()
