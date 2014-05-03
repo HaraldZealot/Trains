@@ -7,7 +7,7 @@ trains: main.o
 	$(CC) -o trains $(CCFLAGS) main.o 
 
 run: trains
-	./trains
+	konsole -e ./trains
 
 main.o: main.c
 	$(CC) -o main.o $(OBJOPT) $(CCFLAGS) main.c
