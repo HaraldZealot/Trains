@@ -1,2 +1,3 @@
 trains
 *.o
+.kateproject*
