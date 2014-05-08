@@ -11,12 +11,12 @@
 #include <unistd.h>
 #include <time.h>
 
-static const char block[4] = {0342, 0226, 0210, 0};
-static const char thinLine[4] = {0342, 0224, 0200, 0};
-static const char thickLine[4] = {0342, 0224, 0201, 0};
-static const char startMutex[4] = {0342, 0225, 0276, 0};
-static const char closeSemaphore[4] = {0342, 0227, 0217, 0};
-static const char openSemaphore[4] = {0342, 0227, 0211, 0};
+static const char block[4] = {'\342', '\226', '\210', '\0'};
+static const char thinLine[4] = {'\342', '\224', '\200', '\0'};
+static const char thickLine[4] = {'\342', '\224', '\201', '\0'};
+static const char startMutex[4] = {'\342', '\225', '\276', '\0'};
+static const char closeSemaphore[4] = {'\342', '\227', '\217', '\0'};
+static const char openSemaphore[4] = {'\342', '\227', '\211', '\0'};
 
 
 

@@ -1,16 +1,16 @@
-CCFLAGS= -std=c99 -O3 -lncursesw -lpthread 
+CXXFLAGS= -std=c++11 -O3 -lncursesw -lpthread 
 OBJOPT= -c
 
 all: trains
 
 trains: main.o
-	$(CC) -o trains $(CCFLAGS) main.o 
+	$(CXX) -o trains $(CXXFLAGS) main.o 
 
 run: trains
 	konsole -e ./trains
 
-main.o: main.c
-	$(CC) -o main.o $(OBJOPT) $(CCFLAGS) main.c
+main.o: main.cpp
+	$(CXX) -o main.o $(OBJOPT) $(CXXFLAGS) main.cpp
 
-clear:
+clean:
 	rm trains *.o
